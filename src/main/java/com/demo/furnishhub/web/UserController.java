@@ -25,13 +25,6 @@ public class UserController {
     }
 
     @CrossOrigin
-    @PostMapping("/lmao")
-    public ResponseEntity<String> fuck() {
-        System.out.println("Hitting the endpoint");
-        return new ResponseEntity<>("Dick", HttpStatus.OK);
-    }
-
-    @CrossOrigin
     @PostMapping("/register")
     public ResponseEntity<HttpStatus> createUser(@Valid @RequestBody User user) {
         userService.saveUser(user);
